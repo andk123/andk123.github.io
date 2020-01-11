@@ -1,0 +1,214 @@
+# If you have a `resume.json` file, copy it into `_data` and delete this file.
+# If you don't have a JSON Resume you can just edit this YAML file instead.
+# See also: <https://jsonresume.org/>.
+basics:
+  name: "Arnold Kokoroko"
+  label: "Software Engineer & Master's Student"
+  picture: "/assets/img/author/46864421944_8ef75a7019_o.jpg"
+  email: "awkokoroko@gmail.com"
+  phone: "(514) 746-6347"
+  #website: "https://piedpiper.com"
+  summary: >
+    Machine learning master's student and Canadian track athlete.
+    I have been working as a Software Engineer at Ericsson for a few years and in 2019, I decided to start my master's in Machine Learning. I love sports, 
+    and when I am not outside, I am lurking in front of my computer trying to understand why my gradient is stuck in a local minimum.
+  location:
+    #address: "2712 Broadway St"
+    #postalCode: "CA 94115"
+    city: "Montreal"
+    countryCode: "Canada"
+    region: "Quebec"
+  profiles:
+    - network: "GitHub"
+      username: "andk123"
+      url: "https://github.com/andk123"
+    - network: "LinkedIn"
+      username: "Arnold Kokoroko"
+      url: "https://www.linkedin.com/in/arnold-kokoroko-2b4656114/"
+education:
+  - institution: "Université de Montréal"
+    area: "Computer Science"
+    studyType: "Master's"
+    startDate: "2019-01-01"
+    endDate: ""
+    gpa: "4.3/4.3"
+    # courses:
+    #   - "DB1101 - Basic SQL"
+    #   - "CS2011 - Java Introduction"
+  - institution: "McGill University"
+    area: "Software Engineering"
+    studyType: "Bachelor"
+    startDate: "2014-08-30"
+    endDate: "2018-04-30"
+    gpa: "3.62/4.00"
+    # courses:
+    #   - "DB1101 - Basic SQL"
+    #   - "CS2011 - Java Introduction"
+work:
+  - company: "Edge Gravity - Ericsson Canada"
+    position: "Security Automation Engineer"
+    website: "https://edgegravity.ericsson.com/"
+    startDate: "May 2019"
+    endDate: ""
+    # summary: >
+    #   Edge Cloud Platform with objective to facilitate the global collaboration between content, 
+    #   application, and service providers to deliver services meeting customer’s highly interactive 
+    #   and data intensive needs at the edge.
+    highlights:
+      - "Implemented security scans using penetration testing and network scanning tools."
+      - "Automated weekly scans to analyse more than 2500 servers in the network."
+      - "Reduced the total execution time by 70%—from 7 days to 2 days—using parallel processing."
+      - "Generated monthly reports automatically based on the severity of the vulnerabilities found."
+  - company: "Ericsson Canada"
+    position: "Software Developer Co-op"
+    website: "https://www.ericsson.ca/"
+    startDate: "Jan 2017"
+    endDate: "May 2018"
+    # summary: >
+    #   Ericsson is a telecommunication company that offers services, software and infrastructure in information
+    #   and communications technology for telecommunications operators, traditional telecommunications and Internet Protocol (IP)
+    #   networking equipment, mobile and fixed broadband, operations and business support services, cable television, 
+    #   IPTV, video systems, and an extensive services operation. 
+    highlights:
+      - "Developed and maintained back-end restAPI services for the Content Delivery Network."
+      - "Created an interactive Web Application for automatic dimensioning and performance analysis of new cache servers in the network."
+      - "Implemented tools to estimate the number of nodes needed in the system, their corresponding bandwidth and their throughput
+based on protocols, encodings, hardware and traffic profiles."
+  - company: "McGill University"
+    position: "Teaching Assistant"
+    website: "https://www.mcgill.ca/study/2018-2019/courses/comp-310"
+    startDate: "Aug 2017"
+    endDate: "Jan 2018"
+    summary: >
+      Teaching Assistant for COMP 310 - Operating Systems (Control and scheduling, Resource allocation, processors, access methods, 
+      main storage management, multiprocessing and synchronization)
+    highlights:
+      - Tasked with conducting office hours every week, handling online course discussion board, and answering emails to help students with queries
+      - Graded assignments and exams under the supervision of the course instructor
+      - Prepared solution sets for assignments
+      - Weekly meetings with other teaching assistants and instructors.
+  - company: "Ericsson Canada"
+    position: "Test and Validation Engineer Intern"
+    website: "https://www.ericsson.ca/"
+    startDate: "May 2016"
+    endDate: "December 2016"
+    # summary: >
+    #   Ericsson is a telecommunication company that offers services, software and infrastructure in information
+    #   and communications technology for telecommunications operators, traditional telecommunications and Internet Protocol (IP)
+    #   networking equipment, mobile and fixed broadband, operations and business support services, cable television, 
+    #   IPTV, video systems, and an extensive services operation. 
+    highlights:
+      - "Created software test plans and automated tests for functional and performance assessment."
+      - "Implemented feature tests for on-going development to ensure the system is error-free."
+      - "Analyzed test results, created test reports, and documented software defects."
+  - company: "NDEX Systems"
+    position: "Intern in software development"
+    website: "http://www.ndexsystems.com/"
+    startDate: "Jun 2015"
+    endDate: "Sep 2015"
+    summary: >
+      NDEX Systems is a wealth management technology provider in Canada devoted to the development 
+      of industry leading wealth management software for the financial industry.
+    highlights:
+      - "Performed front-end development and website restyling."
+      - "Completed unit testing and bug fixing."
+      - "Worked alongside software developers to discuss specific software issues and test plans."
+volunteer:
+  - organization: "Saint-Laurent Select"
+    position: "Coach and Volunteer"
+    website: "http://slsathletisme.com/"
+    startDate: "2017-04-30"
+    endDate: ""
+    summary: "I like volunteering in my track and field club *Saint-Laurent Select* as it gives me the opportunity 
+    to decompress, break routine and put a smile on people's faces"
+    highlights:
+      - "Teach kids and improve their sprinting technique all while making the sessions pleasant and enjoyable"
+      - "Provide help during competitions and ensure smooth operations"
+awards:
+  - title: "Academic All-Canadian"
+    date: "2019-03-01"
+    awarder: "U SPORTS"
+    summary: "In 1988, U SPORTS introduced its first Academic All-Canadians, those exceptional 
+    student-athletes who achieve an academic standing of 80% or better while playing on one of their university's varsity teams."
+  - title: "Compliments of the McGill University Dept. of Athletics"
+    date: "2018-10-01"
+    awarder: "McGill University"
+    summary: "Presented in recognition of having achieved the Principals' Student Athlete Honor 
+    Roll for a third year while being an active member of a varsity team at the University."
+  - title: "Principal's Student-Athlete Honour Roll 2015/2017/2018"
+    date: ""
+    awarder: "McGill University"
+    summary: "In recognition of outstanding academic achievements as an intercollegiate student-athlete at McGill University"
+# publications:
+#   - name: "Video compression for 3d media"
+#     publisher: "Hooli"
+#     releaseDate: "2014-10-01"
+#     website: "https://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)"
+#     summary: "Innovative middle-out compression algorithm that changes the way we store data."
+skills:
+  - name: "Programming Languages:"
+    #level: "Master"
+    keywords:
+      - "Java"
+      - "Python"
+      - "Bash"
+      - "C/C++"
+      - "JavaScript"
+      - "HTML"
+      - "PostgreSQL"
+      - "PHP"
+  - name: "Machine Learning:"
+    #level: "Master"
+    keywords:
+      - "Scikit-learn"
+      - "Pytorch"
+      - "Tensorflow"
+      - "Keras"
+      - "NumPy"
+      - "Pandas"
+  - name: "DevOps:"
+    #level: "Master"
+    keywords:
+      - "Git"
+      - "Docker"
+      - "Kubernetes"
+      - "Jenkins"
+      - "ELK Stack"
+  - name: "Web frameworks:"
+    #level: "Master"
+    keywords:
+      - "Spring"
+      - "Jersey"
+      - "Node.js"
+      - "Selenium"
+      - "Apache Struts 2"
+  - name: "Mobile Development:"
+    #level: "Master"
+    keywords:
+      - "Android Studio"
+      - "React Native"
+languages:
+  - language: "English"
+    fluency: "Native speaker"
+  - language: "French"
+    fluency: "Native speaker"
+interests:
+  - name: "Track and Field"
+    keywords:
+      - "100m - 200m - 400m"
+  - name: "CFL and NFL"
+    keywords:
+      - "Montreal Alouettes"
+      - "Kansas City Chief"
+  - name: "Dance"
+    keywords:
+      - "Social Dance"
+      - "Breakdance and Popping"
+  - name: "Provincial Level Soccer Referee"
+    keywords:
+      - "Soccer Federation of Quebec"
+# references:
+#   - name: "Erlich Bachman"
+#     reference: >
+#       It is my pleasure to recommend Richard, his performance working as a consultant for Main St.
+#       Company proved that he will be a valuable addition to any company.

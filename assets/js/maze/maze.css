@@ -1,0 +1,37 @@
+.maze_runner {
+	text-align: center;
+    -ms-touch-action: manipulation !important;
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+
+}
+
+.buttonBlue {
+    -moz-box-shadow: 0px 6px 0px 0px #0d5aa3;
+    -webkit-box-shadow: 0px 6px 0px 0px #0d5aa3;
+    box-shadow: 0px 6px 0px 0px #275d62;
+    background-color:#4fb1ba;
+    -moz-border-radius:28px;
+    -webkit-border-radius:28px;
+    border-radius:28px;
+    border:1px solid #84bbf3;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:16px;
+    padding:8px 20px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #528ecc;
+    outline:0;
+
+}
+.buttonBlue:hover {
+    background-color:#193747;
+}
+.buttonBlue:active {
+    position:relative;
+    top:1px;
+}
+
