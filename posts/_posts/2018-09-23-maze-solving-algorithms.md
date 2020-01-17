@@ -1,6 +1,6 @@
 ---
 title: Maze Solving Algorithms
-image: /assets/img/posts/howtoescapea.jpg
+image: /assets/img/posts/maze.png
 description: >
   Maze Runner is a visualization tool for maze generation and path solving using JavaScript and HTML5 Canvas. It provides insight into the behavior of popular maze generation and traversal algorithms, such as Breadth-First Search (BFS), Depth-First Search (DFS), and A* Search.
 ---
