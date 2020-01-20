@@ -9,7 +9,7 @@ links:
   #   url: https://hydecorp.github.io/hy-img/
   - title: Source
     url: https://github.com/lebrice/IFT6135/tree/master/Assignment3
-caption: Mobile Application for Gambling Self-Monitoring
+#caption: Mobile Application for Gambling Self-Monitoring
 description: >
   GambTrax is a Self-Monitoring Gambling Application that 
 accent_color: '#4fb1ba'
