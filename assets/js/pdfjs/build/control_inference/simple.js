@@ -1,5 +1,5 @@
 (async () => {
-    const loadingTask = pdfjsLib.getDocument("/assets/js/pdfjs/build/maze/RL_Probabilistic_Inference.pdf");
+    const loadingTask = pdfjsLib.getDocument("/assets/js/pdfjs/build/control_inference/RL_Probabilistic_Inference.pdf");
     const pdf = await loadingTask.promise;
   
     // Load information from the first page.

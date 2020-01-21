@@ -12,11 +12,13 @@ Probabilistic inference can be used in a lot of [...] explain why we chose to do
   <meta charset="UTF-8">
   <title>PDF.js Example</title>
   <script src="/assets/js/pdfjs/build/pdf.js"></script>
-  <script src="/assets/js/pdfjs/build/maze/simple.js"></script>
+  <script src="/assets/js/pdfjs/build/control_inference/simple.js"></script>
 </head>
 <body>
-  <canvas id="pdf"></canvas>
+  <a target="_blank" href="/assets/js/pdfjs/web/viewer.html?file=/assets/js/pdfjs/build/control_inference/RL_Probabilistic_Inference.pdf">
+    <canvas id="pdf"></canvas>
+  </a>
 </body>
 </html>
 
-[PDF of the Review](/assets/js/pdfjs/web/viewer.html?file=/assets/js/pdfjs/build/maze/RL_Probabilistic_Inference.pdf). 
+[PDF of the Review](/assets/js/pdfjs/web/viewer.html?file=/assets/js/pdfjs/build/control_inference/RL_Probabilistic_Inference.pdf). 

@@ -15,7 +15,9 @@ Probabilistic inference can be used in a lot of [...] explain why we chose to do
   <script src="/assets/js/pdfjs/build/security/simple.js"></script>
 </head>
 <body>
-  <canvas id="pdf"></canvas>
+  <a target="_blank" href="/assets/js/pdfjs/web/viewer.html?file=/assets/js/pdfjs/build/security/Vulnerabilite_Spectre_et_Meltdown.pdf">
+    <canvas id="pdf"></canvas>
+  </a>
 </body>
 </html>
 

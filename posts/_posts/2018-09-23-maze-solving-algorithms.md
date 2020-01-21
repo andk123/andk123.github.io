@@ -12,9 +12,9 @@ Here is the experimental results of comparing different searching algorithm usin
 <link rel="stylesheet" type="text/css" href="/assets/js/maze/maze.css">
 
 <div style="text-align:center" id="maze_runner">
-  <canvas id="runner1" width="350" height="400"></canvas>
-  <canvas id="runner2" width="350" height="400"></canvas>
-  <canvas id="runner3" width="350" height="400"></canvas>
+  <canvas id="runner1" width="350" height="425"></canvas>
+  <canvas id="runner2" width="350" height="425"></canvas>
+  <canvas id="runner3" width="350" height="425"></canvas>
   <p>
     <button class="buttonBlue" id="restart">Restart</button> 
     <button class="buttonBlue" id="reset">New maze</button>
@@ -53,3 +53,5 @@ DFS is a search algorithm for traversing a graph or tree. Rather than considerin
 ## A* Search
 
 Unlike BFS and DFS, A* is an informed search algorithm. A* is implemented by searching the possible paths to the goal and opting for the one that incurs the smallest cost. The cost used by A* is the actual distance incremented from the start to the current node plus the estimated distance to the goal. To determine the cost to the goal, there are a number of heuristics. Two popular options are Manhattan distance and straight-line distance. In the Manhattan heuristic, the distance to the goal in the vertical direction plus the distance to the goal in the horizontal direction. While in the straight-line heuristic, the straight-line distance to the goal is used as the estimate.
+
+[You can find the code for this article on GitHub](https://github.com/andk123/Maze-Solving-Traversal-Algorithms)
