@@ -9,7 +9,7 @@ links:
   #   url: https://hydecorp.github.io/hy-img/
   - title: Source
     url: https://github.com/lebrice/IFT6135/tree/master/Assignment2
-#caption: Mobile Application for Gambling Self-Monitoring
+caption: Deep Learning
 description: >
   Compare the performances of a Vanilla RNN vs GRU vs the attention module of a transformer network on the Penn Treebank dataset
 accent_color: '#4fb1ba'

@@ -4,7 +4,8 @@ image: /assets/img/posts/control_inference.png
 description: >
   Description of the paper review
 ---
-
+In the context of...
+and after analyzing the different properties of ...
 Probabilistic inference can be used in a lot of [...] explain why we chose to do this.
 
 <html>

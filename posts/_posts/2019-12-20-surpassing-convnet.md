@@ -5,7 +5,9 @@ description: >
   Description of the paper review
 ---
 
-Probabilistic inference can be used in a lot of [...] explain why we chose to do this.
+It is no news to anyone, Convolutional Neural Networks are among the most popular techniques these days in image classification.
+
+However, for a system with limited ressources,
 
 <html>
 <head>

@@ -1,6 +1,6 @@
 ---
 layout: project
-title: 'VAE vs GAN in image generation and compression (Coming Soon)'
+title: 'VAE vs GAN in Image Generation'
 date: April 2019
 image: /assets/img/projects/hy-img.svg
 screenshot: /assets/img/projects/imagegen/vae_vs_gan3.png
@@ -9,16 +9,16 @@ links:
   #   url: https://hydecorp.github.io/hy-img/
   - title: Source
     url: https://github.com/lebrice/IFT6135/tree/master/Assignment3
-#caption: Mobile Application for Gambling Self-Monitoring
-description: >
-  GambTrax is a Self-Monitoring Gambling Application that 
+caption: Deep Learning
+# description: >
+#   GambTrax is a Self-Monitoring Gambling Application that 
 accent_color: '#4fb1ba'
 #accent_image:
   #background: 'linear-gradient(to right,#19c9c7 0%,#57ded4 50%,#a5f9e4 100%)'
   #overlay:    true
 ---
 
-# VAE vs GAN in image generation and compression 
+# VAE vs GAN in Image Generation
 
 ## Purpose
 
