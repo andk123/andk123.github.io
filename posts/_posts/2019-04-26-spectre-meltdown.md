@@ -2,10 +2,10 @@
 title: Article:&nbsp;Les Vulnerabilités Spectre et Meltdown
 image: /assets/img/posts/intel-spectre-meltdown.png
 description: >
-  Description of the paper review
+  Discussion sur les vulnérabilités critiques Spectre et Meltdown
 ---
 
-Probabilistic inference can be used in a lot of [...] explain why we chose to do this.
+DEux grandes failles des processurs modernes sont discutées dans l'article ci-dessous.
 
 <html>
 <head>

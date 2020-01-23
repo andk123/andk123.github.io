@@ -31,7 +31,7 @@ In most classification tasks, working on raw data can prove to be tedious. There
 - Stemming and Lemming
 - Term Frequency-Inverse Document Frequency (TF-IDF)
 
-After processing the data, it is then time to choose the model to categorize the different text corpora into topics. Obviously, depending on the feature extractions methods used, some models may before better than others. For this project, we focused on 3 methods:  
+After processing the data, it is then time to choose the model to categorize the different text corpus into topics. Obviously, depending on the feature extractions methods used, some models may before better than others. For this project, we focused on 3 methods:  
 
 **Algorithms**
 - Naive Bayes 

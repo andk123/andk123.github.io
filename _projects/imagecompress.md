@@ -29,26 +29,53 @@ Storing multiple images in a cache servers can prove to be costly, especially if
 The solution I am currently studying is to train a network to compress *medium* resolution images, then to train a second network to compress *high* resolution images, and finally train a third network to use the compressed *high* resolution of the image and generate its *medium* resolution with high accuracy using AutoEncoders. This way, only high resolution images would have to be stored in the cache servers. Then, if this works the next step would be to train a generative network to decompress *medium* resolution images into *high* resolution.
 
 The findings in this project could then be extended to videos---which are some of the biggest files in CDNs. This idea is explored in the Paper [Deep Generative Video Compression](https://arxiv.org/abs/1810.02845), although it only explorer the compression of videos using Variational Autoencoders and not its decompression into different resolutions.
-
 ### Deep Learning Task
 
-Goal: Find compressed knowledge representation of the original input  
-How: Training on a lot of data
+**Goal**: Find compressed knowledge representation of the original input  
+
+The goal in the first step is to find the latent, or compressed, representation of the images we want to save in the cache.  
+
+**How**: Using Autoencoders on a large bank of images
+
+This can be done notably by using Autoencoders. The Autoencoder is a type of artificial neural network used to learn efficient data codings in an unsupervised manner. The aim of an autoencoder is to learn a representation for a set of data (encoder), typically for dimensionality reduction, then to learn how to reconstruct the data back from the reduced encoded representation to a representation that is as close to the original input as possible (decoder).
 
 ![](/assets/img/projects/imagecompress/encoder1.png){:.figure1 style="max-width: 50%;"} 
 ![](/assets/img/projects/imagecompress/encoder2.png){:.figure1 style="max-width: 50%;"} 
 
-## 3 Types of Autoencoders
+### Methods
 
-<u> Fully connected autoencoder:</u> -> 172 x 172 x 3 for input 
-space -> Millions of parameters -> Not enough memory
-<br />
-<u> Convolutional autoencoders:</u> Model currently in use
-<br />
-<u> Variational autoencoders:</u> Possible alternative solution,
+For this task, 3 types of Autoencoders can be used:
+
+**Fully connected autoencoder**  
+
+In the case of the fully connected autoencoder, both the encoder and decoder are fully-connected feedforward neural networks. First the input passes through the encoder to produce the code. The decoder, which has a similar artificial neural network structure, then produces the output only using the code. The goal is to get an output identical with the input. Note that the decoder architecture is the mirror image of the encoder. This is not a requirement but it’s typically the case. The only requirement is the dimensionality of the input and output needs to be the same.
+
+![](/assets/img/projects/imagecompress/fullyconnect_ae.png){:.figure1 style="max-width: 50%;"} 
+
+-> 172 x 172 x 3 for input 
+space -> Millions of parameters -> Not enough memory  
+
+**Convolutional autoencoders**  
+ Unlike the fully connected autoencoder, the convolutional autoencoder keep the spatial information of the input image data as they are, and extract information gently in what is called the Convolution layer. This way, the number of parameters needed using the convolutional autoencoder is greatly reduced. Furthermore, it also retains the spatial relationships in the data.
+ 
+![](/assets/img/projects/imagecompress/conv_ae.png){:.figure1 style="max-width: 75%;"}  
+
+Model currently in use
+
+**Variational autoencoders**  
+
+a variational autoencoder can be defined as being an autoencoder whose training is regularised to avoid overfitting and ensure that the latent space has good properties that enable generative process.
+
+Just as a standard autoencoder, a variational autoencoder is an architecture composed of both an encoder and a decoder and that is trained to minimise the reconstruction error between the encoded-decoded data and the initial data. However, in order to introduce some regularisation of the latent space, we proceed to a slight modification of the encoding-decoding process: instead of encoding an input as a single point, we encode it as a distribution over the latent space
+
+A variational autoencoder (VAE) provides a probabilistic manner for describing an observation in latent space. Thus, rather than building an encoder which outputs a single value to describe each latent state attribute, we'll formulate our encoder to describe a probability distribution for each latent attribute.
+
+ For variational autoencoders, the encoder model is sometimes referred to as the recognition model whereas the decoder model is sometimes referred to as the generative model.
+
+![](/assets/img/projects/imagecompress/vae.jpg){:.figure1 style="max-width: 65%;"} 
+
+Possible alternative solution,
  but generally used as a generative model
-
-![](/assets/img/projects/imagecompress/encode_type.png){:.figure1 style="max-width: 50%;"} 
 
 ## Data from DIV2K Dataset
 
