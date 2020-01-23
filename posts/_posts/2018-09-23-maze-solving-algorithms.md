@@ -7,7 +7,7 @@ description: >
 
 Here is the experimental results of comparing different searching algorithm using the maze runner. In the following order, we have Breadth-First Search, Depth-First Search, and A* Search.
 
-<img id="maze_thumbnail" src="https://i.gyazo.com/thumb/400/_8acddd2ae042291c5e9e51950f8afad5-gif.gif" alt="Maze that demonstrates AI capabilities" title="Maze solver"/>
+<img id="maze_thumbnail" src="https://i.gyazo.com/thumb/400/_8acddd2ae042291c5e9e51950f8afad5-gif.gif" alt="Maze that demonstrates traversal algorithms" title="Maze solver"/>
 
 <link rel="stylesheet" type="text/css" href="/assets/js/maze/maze.css">
 

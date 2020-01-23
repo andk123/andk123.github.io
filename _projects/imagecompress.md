@@ -10,8 +10,8 @@ links:
   #- title: Source
   #  url: https://github.com/andk123/Self-MonitoringGamblingApp
 caption: Deep Learning
-description: >
-  GambTrax is a Self-Monitoring Gambling Application that 
+#description: >
+#  GambTrax is a Self-Monitoring Gambling Application that 
 accent_color: '#4fb1ba'
 #accent_image:
   #background: 'linear-gradient(to right,#19c9c7 0%,#57ded4 50%,#a5f9e4 100%)'
@@ -22,7 +22,7 @@ accent_color: '#4fb1ba'
 
 ## Idea
 
-Image compression is an important topic in Content Delivery Network (CDN) and for content distributors. When a user asks for a specific file or image, this request is made to the root server that sends the image to the edge server. Now, if this image is requested multiple times, it will be stocked in a cache server close to the client to be distributed to a node in a timely manner and reduce overhead. These servers work with load balancers and other clusters to ensure low latency in the network. Now for the cases of images, a simple pciture may have different resolutions requested by different users at the same which will be cached. User A asks for a medium resolution which is downloaded from the root server and stored in the cache, and User B ask for the same image, but in a higher resolution.  
+Image compression is an important topic in Content Delivery Network (CDN) and for content distributors. When a user asks for a specific file or image, this request is made to the root server that sends the image to the edge server. Now, if this image is requested multiple times, it will be stocked in a cache server close to the client to be distributed to a node in a timely manner and reduce overhead. These servers work with load balancers and other clusters to ensure low latency in the network. Now for the cases of images, a simple picture may have different resolutions requested by different users at the same which will be cached. User A asks for a medium resolution which is downloaded from the root server and stored in the cache, and User B ask for the same image, but in a higher resolution.  
 
 Storing multiple images in a cache servers can prove to be costly, especially if there are many nodes in the network. To reduce the size of these nodes, we can compress the images, but what can we do about the multiple resolutions? In the case mentioned above, instead of storing the same image into 2 different resolutions, is there a way to save this image in 1 compressed resolution and when uncompressing it, having the choice to get one of the 2 resolutions.  
 
@@ -44,7 +44,7 @@ This can be done notably by using Autoencoders. The Autoencoder is a type of art
 
 ### Methods
 
-For this task, 3 types of Autoencoders can be used:
+For this task, 3 types of Autoencoders can be used:  
 
 **Fully connected autoencoder**  
 
@@ -54,23 +54,19 @@ In the case of the fully connected autoencoder, both the encoder and decoder are
 
 -> 172 x 172 x 3 for input 
 space -> Millions of parameters -> Not enough memory  
+<br/>
 
 **Convolutional autoencoders**  
  Unlike the fully connected autoencoder, the convolutional autoencoder keep the spatial information of the input image data as they are, and extract information gently in what is called the Convolution layer. This way, the number of parameters needed using the convolutional autoencoder is greatly reduced. Furthermore, it also retains the spatial relationships in the data.
  
 ![](/assets/img/projects/imagecompress/conv_ae.png){:.figure1 style="max-width: 75%;"}  
 
-Model currently in use
+Model currently in use  
+<br/>
 
 **Variational autoencoders**  
 
-a variational autoencoder can be defined as being an autoencoder whose training is regularised to avoid overfitting and ensure that the latent space has good properties that enable generative process.
-
-Just as a standard autoencoder, a variational autoencoder is an architecture composed of both an encoder and a decoder and that is trained to minimise the reconstruction error between the encoded-decoded data and the initial data. However, in order to introduce some regularisation of the latent space, we proceed to a slight modification of the encoding-decoding process: instead of encoding an input as a single point, we encode it as a distribution over the latent space
-
-A variational autoencoder (VAE) provides a probabilistic manner for describing an observation in latent space. Thus, rather than building an encoder which outputs a single value to describe each latent state attribute, we'll formulate our encoder to describe a probability distribution for each latent attribute.
-
- For variational autoencoders, the encoder model is sometimes referred to as the recognition model whereas the decoder model is sometimes referred to as the generative model.
+A variational autoencoder can be defined as being an autoencoder whose training is regularised to avoid overfitting and ensure that the latent space has good properties that enable generative process. Just as a standard autoencoder, a variational autoencoder is an architecture composed of both an encoder and a decoder and that is trained to minimise the reconstruction error between the reconstructed data and the initial data. However, rather than building an encoder which outputs a single value to describe each latent state attribute, we formulate our encoder to describe a probability distribution for each latent attribute. This introduces some regularisation in the latent space. In this case, the encoder model can be referred to as the recognition model whereas the decoder model is can be referred to as the generative model.
 
 ![](/assets/img/projects/imagecompress/vae.jpg){:.figure1 style="max-width: 65%;"} 
 
@@ -78,18 +74,21 @@ Possible alternative solution,
  but generally used as a generative model
 
 ## Data from DIV2K Dataset
+ 
+In order to train this model and provide a proof of concept, I decided to opt for the DIVerse 2K resolution high quality images (DIV2K) dataset. The DIV2K dataset includes:
+- Numerous images duplicated in different resolutions
+- For each resolution: 800 images for the training set
+- 100 images for the validation set
+- 100 images for the testing set
 
-DIVerse 2K resolution high quality images includes:
-- Different resolutions and for each resolution:
-- 1000 images divided into — 800 images
-- for training — 100 images for validation — 100 images 
-- for testing
+![](/assets/img/projects/imagecompress/DIV2K_dataset2.png){:.figure1 style="max-width: 50%; display: inline-block"} 
+![](/assets/img/projects/imagecompress/DIV2K_dataset3.png){:.figure1 style="max-width: 50%; display: inline-block"}  
 
-Dataset available at: https://data.vision.ee.ethz.ch/cvl/DIV2K/
-
-![](/assets/img/projects/imagecompress/DIV2K_dataset.png){:.figure1 style="max-width: 50%;"} 
+Dataset available at: [https://data.vision.ee.ethz.ch/cvl/DIV2K/](https://data.vision.ee.ethz.ch/cvl/DIV2K/)
 
 ## Training the data Medium resolution (172x172x3)
+
+For each pair of images, on top you have the original image and at the bottom you have the reconstructed image. EThe first 2 lines are the first epoch, while the last two lines are the 10th epoch.
 
 ![](/assets/img/projects/imagecompress/medium_resolution.png){:.figure1 style="max-width: 50%;"} 
 
@@ -98,6 +97,8 @@ Dataset available at: https://data.vision.ee.ethz.ch/cvl/DIV2K/
 ![](/assets/img/projects/imagecompress/graph_med_resol.png){:.figure1 style="max-width: 50%;"} 
 
 ## Training the data High resolution (344x344x3)
+
+Same idea as in the previous section using high resolution images.
 
 ![](/assets/img/projects/imagecompress/high_resolution.png){:.figure1 style="max-width: 50%;"} 
 
