@@ -88,23 +88,19 @@ Dataset available at: [https://data.vision.ee.ethz.ch/cvl/DIV2K/](https://data.v
 
 ## Training the data Medium resolution (172x172x3)
 
-For each pair of images, on top you have the original image and at the bottom you have the reconstructed image. EThe first 2 lines are the first epoch, while the last two lines are the 10th epoch.
+First I trained the model using 172x172x3 images to represent the medium resolution images. Due to the limited computation power available, I had to limit the number of pixels that would be treated in the model. The images displayed in the graph below are validation samples at the end of the training epoch. For each pair of images, the top image is the original data and the bottom image is the reconstructed data through the model. 
 
-![](/assets/img/projects/imagecompress/medium_resolution.png){:.figure1 style="max-width: 50%;"} 
+![](/assets/img/projects/imagecompress/medium_resolution_juxta_done.png){:.figure1 style="max-width: 100%;"} 
 
-![](/assets/img/projects/imagecompress/medium_resolution2.png){:.figure1 style="max-width: 50%;"} 
-
-![](/assets/img/projects/imagecompress/graph_med_resol.png){:.figure1 style="max-width: 50%;"} 
+![](/assets/img/projects/imagecompress/graph_med_resol.png){:.figure1 style="max-width: 100%;"} 
 
 ## Training the data High resolution (344x344x3)
 
-Same idea as in the previous section using high resolution images.
+Same idea as in the previous section using high resolution images. For this case, I trained the model using 344x344x3 images to represent the high resolution images. Again, the images displayed in the graph below are validation samples at the end of the training epoch. For each pair of images, the top image is the original data and the bottom image is the reconstructed data through the model. 
 
-![](/assets/img/projects/imagecompress/high_resolution.png){:.figure1 style="max-width: 50%;"} 
+![](/assets/img/projects/imagecompress/high_resolution_juxta_done.png){:.figure1 style="max-width: 100%;"} 
 
-![](/assets/img/projects/imagecompress/high_resolution2.png){:.figure1 style="max-width: 50%;"} 
-
-![](/assets/img/projects/imagecompress/graph_high_resol.png){:.figure1 style="max-width: 50%;"} 
+![](/assets/img/projects/imagecompress/graph_high_resol.png){:.figure1 style="max-width: 100%;"} 
 
 ## Main idea is to Capture the features
 

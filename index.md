@@ -16,7 +16,7 @@ hide_description: true
 
 # Welcome
 
-Welcome to my personal website. You will find my latest projects and my blog on fields of Data Science, Machine Learning, Algorithms and other topics in Computer Science. You can also scroll through my Resume to learn my professional and academic history. This website was built using Jekyll with Javascript and is hosted on GitHub pages. For a darker color, you can switch to the night mode using the icon🌗 above.
+Welcome to my personal website. You will find my latest projects and my blog on topics in Data Science, Machine Learning, Algorithms and other topics in Computer Science. You can also scroll through my Resume to learn my professional and academic history. This website was built using Jekyll with Javascript and is hosted on GitHub pages. For a darker color, you can switch to the night mode using the icon🌗 above.
 
 ## Who Am I
 
