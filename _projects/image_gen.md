@@ -1,6 +1,6 @@
 ---
 layout: project
-title: 'VAE vs GAN in Image Generation'
+title: 'VAE vs GAN in Image Generation (Coming soon)'
 date: April 2019
 image: /assets/img/projects/hy-img.svg
 screenshot: /assets/img/projects/imagegen/vae_vs_gan3.png
@@ -10,16 +10,17 @@ links:
   - title: Source
     url: https://github.com/lebrice/IFT6135/tree/master/Assignment3
 caption: Deep Learning
-# description: >
-#   GambTrax is a Self-Monitoring Gambling Application that 
+description: >
+  Analysis of the Variational Autoencoder vs the Generative Adversarial Network in generative tasks (Coming Soon)
 accent_color: '#4fb1ba'
 #accent_image:
   #background: 'linear-gradient(to right,#19c9c7 0%,#57ded4 50%,#a5f9e4 100%)'
   #overlay:    true
 ---
 
-# VAE vs GAN in Image Generation
+# VAE vs GAN in Image Generation (Coming soon)
 
+<!-- 
 ## Purpose
 
 
@@ -119,4 +120,4 @@ picked up more realistic features that were captured by the classier and achiev
 
 ![](/assets/img/projects/imagegen/fid_impl.png){:.figure1 style="max-width: 75%;"} 
 
-![](/assets/img/projects/imagegen/fid_score.png){:.figure1 style="max-width: 50%;"} 
+![](/assets/img/projects/imagegen/fid_score.png){:.figure1 style="max-width: 50%;"}  -->

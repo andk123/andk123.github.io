@@ -1,6 +1,6 @@
 ---
 layout: project
-title: 'Language Modelling: RNN vs GRU vs Transformer'
+title: 'Language Modelling: RNN vs GRU vs Transformer (Coming soon)'
 date: March 2019
 image: /assets/img/projects/hy-img.svg
 screenshot: /assets/img/projects/transformer.png
@@ -11,16 +11,16 @@ links:
     url: https://github.com/lebrice/IFT6135/tree/master/Assignment2
 caption: Deep Learning
 description: >
-  Compare the performances of a Vanilla RNN vs GRU vs the attention module of a transformer network on the Penn Treebank dataset
+  Compare the performances of a Vanilla RNN vs GRU vs the attention module of a transformer network on the Penn Treebank dataset (Coming Soon)
 accent_color: '#4fb1ba'
 #accent_image:
   #background: 'linear-gradient(to right,#19c9c7 0%,#57ded4 50%,#a5f9e4 100%)'
   #overlay:    true
 ---
 
-# Language Modelling: RNN vs GRU vs Transformer
+# Language Modelling: RNN vs GRU vs Transformer (Coming soon)
 
-## Purpose
+<!-- ## Purpose
 
 The purpose of this project was to implement and train sequential language models on the Penn
 Treebank dataset. Language models learn to assign a likelihood to sequences of text. The elements
@@ -157,4 +157,4 @@ best perplexities, but generally its results were more stable than those of the 
 ![](/assets/img/projects/sentencegen/transformer_loss_timestep.png){:.figure1 style="max-width: 75%;"} 
 
 ![](/assets/img/projects/sentencegen/grad_timestep.png){:.figure1 style="max-width: 75%;"} 
-
+ -->

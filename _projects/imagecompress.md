@@ -22,22 +22,27 @@ accent_color: '#4fb1ba'
 
 ## Idea
 
-Image compression is an important topic in Content Delivery Network (CDN) and for content distributors. When a user asks for a specific file or image, this request is made to the root server that sends the image to the edge server. Now, if this image is requested multiple times, it will be stocked in a cache server close to the client to be distributed to a node in a timely manner and reduce overhead. These servers work with load balancers and other clusters to ensure low latency in the network. Now for the cases of images, a simple picture may have different resolutions requested by different users at the same which will be cached. User A asks for a medium resolution which is downloaded from the root server and stored in the cache, and User B ask for the same image, but in a higher resolution.  
+File compression is an important aspect in cloud computing and in Content Delivery Network (CDN). For example, in a CDN system, when a user asks for a new file or image, the request would be propagated to the root server which would retrieve the file from the database then transfer it back to an edge server the user has access to. Now, if this data is requested multiple times, it would be stocked in a cache server close to the client to speed up access and reduce demand on the company's bandwidth. These servers usually work in tandem with reverse proxies or load balancers to ensure efficiency and improve performances. 
 
-Storing multiple images in a cache servers can prove to be costly, especially if there are many nodes in the network. To reduce the size of these nodes, we can compress the images, but what can we do about the multiple resolutions? In the case mentioned above, instead of storing the same image into 2 different resolutions, is there a way to save this image in 1 compressed resolution and when uncompressing it, having the choice to get one of the 2 resolutions.  
+Now for the case of images, a simple picture may have different resolutions requested by different users that would need to be cached. Say User A asks for a medium resolution picture which is requested from the root server then stored in the cache, and User B asks for the same image, but in a higher resolution which will also be stored in the cache. Storing multiple images in a cache servers can prove to be costly, especially if there are many nodes in the network. To reduce the size of these nodes, we can compress the images, but what can we do about the fact that we have multiple resolutions? We have the same picture, but in two different resolutions stored in the cache. Is there a way to save only 1 compressed representation of that image in the cache and have the choice to uncompress it to one of the 2 resolutions when the image needs to be retrieved?
 
-The solution I am currently studying is to train a network to compress *medium* resolution images, then to train a second network to compress *high* resolution images, and finally train a third network to use the compressed *high* resolution of the image and generate its *medium* resolution with high accuracy using AutoEncoders. This way, only high resolution images would have to be stored in the cache servers. Then, if this works the next step would be to train a generative network to decompress *medium* resolution images into *high* resolution.
+Well, the solution I am currently studying is to train a network to compress *medium* resolution images, then to train a second network to compress *high* resolution images, and finally train a third network to use the compressed *high* resolution of the image and generate its *medium* resolution with high accuracy using AutoEncoders. This way, only high resolution images would have to be stored in the cache servers. Then, if this works the next step would be to train a generative network to use the compressed *medium* resolution images to get a *high* resolution image:  
+1. Network to compress/decompress medium resolution images
+2. Network to compress/decompress high resolution images
+3. Network to retrieve medium resolution image from compressed high resolution image
+    - 3b. Network to generate high resolution image from compressed medium resolution image
 
-The findings in this project could then be extended to videos---which are some of the biggest files in CDNs. This idea is explored in the Paper [Deep Generative Video Compression](https://arxiv.org/abs/1810.02845), although it only explorer the compression of videos using Variational Autoencoders and not its decompression into different resolutions.
+The findings of this project could then be extended to videos---which are some of the largest files in CDNs. This idea is explored in the paper [Deep Generative Video Compression](https://arxiv.org/abs/1810.02845) which explores the compression of videos using Variational Autoencoders.
+
 ### Deep Learning Task
 
 **Goal**: Find compressed knowledge representation of the original input  
 
 The goal in the first step is to find the latent, or compressed, representation of the images we want to save in the cache.  
 
-**How**: Using Autoencoders on a large bank of images
+**How**: By training Autoencoders on a large bank of images
 
-This can be done notably by using Autoencoders. The Autoencoder is a type of artificial neural network used to learn efficient data codings in an unsupervised manner. The aim of an autoencoder is to learn a representation for a set of data (encoder), typically for dimensionality reduction, then to learn how to reconstruct the data back from the reduced encoded representation to a representation that is as close to the original input as possible (decoder).
+This can be done notably by using a specific type of artificial neural network: the autoencoder. The autoencoder is a technique used to discover efficient data codings in an unsupervised manner. The aim of an autoencoder is to learn a representation for a set of data (encoder), typically for dimensionality reduction, then to learn how to reconstruct the data back from the reduced encoded representation to a representation that is as close to the original input as possible (decoder).
 
 ![](/assets/img/projects/imagecompress/encoder1.png){:.figure1 style="max-width: 50%;"} 
 ![](/assets/img/projects/imagecompress/encoder2.png){:.figure1 style="max-width: 50%;"} 
@@ -48,12 +53,11 @@ For this task, 3 types of Autoencoders can be used:
 
 **Fully connected autoencoder**  
 
-In the case of the fully connected autoencoder, both the encoder and decoder are fully-connected feedforward neural networks. First the input passes through the encoder to produce the code. The decoder, which has a similar artificial neural network structure, then produces the output only using the code. The goal is to get an output identical with the input. Note that the decoder architecture is the mirror image of the encoder. This is not a requirement but it’s typically the case. The only requirement is the dimensionality of the input and output needs to be the same.
+In the case of the fully connected autoencoder, both the encoder and decoder are fully-connected feedforward neural networks. First the input passes through the encoder to produce the code. Then, the decoder which has a similar neural network structure produces the output only using the code. The goal is to get an output identical with the input. Note that the decoder architecture is the mirror image of the encoder. This is not a requirement but it’s typically the case. The only requirement is the dimensionality of the input and output needs to be the same.
 
 ![](/assets/img/projects/imagecompress/fullyconnect_ae.png){:.figure1 style="max-width: 50%;"} 
 
--> 172 x 172 x 3 for input 
-space -> Millions of parameters -> Not enough memory  
+However, this model would not suited for our task as the number of parameters in the fully connected layers would be way too large since we are dealing with images. For example, the number of parameters in the first layer assuming only 100 neurons and a 172x172 colored image would be 172 x 172 x 3 x 100 + 100 = 8,875,300 parameters only for the first layer.
 <br/>
 
 **Convolutional autoencoders**  
@@ -104,6 +108,7 @@ Same idea as in the previous section using high resolution images. For this case
 
 ## Main idea is to Capture the features
 
+The main idea when using the autoencoder in this problem is to capture the features of the images while disregarding the noise. Now, the next idea is to find a relation between the features collected from a high resolution image and the features of the same image in a lower resolution. 
 - Decode an image using High resolution model
 - Use the latent representation from this high resolution image
 - Decode this representation using the Medium resolution model
@@ -112,19 +117,18 @@ Same idea as in the previous section using high resolution images. For this case
 
 ## However when put in practice...
 
-The results are not terrible. This is the images at the start of training. The model struggles at converging.
+The results are not terrible. The figure below represents compressed representation of high resolution images being processed through a feedforward neural network and then to the decoder of the medium resolution images throughout the epochs. The model struggles at converging. 
 
-![](/assets/img/projects/imagecompress/loss_decoding.png){:.figure1 style="max-width: 50%;"} 
+![](/assets/img/projects/imagecompress/rebuild_image_juxta_done.png){:.figure1 style="max-width: 50%;"} 
 
-![](/assets/img/projects/imagecompress/resolution_decoding.png){:.figure1 style="max-width: 50%;"} 
-
-![](/assets/img/projects/imagecompress/resolution_decoding2.png){:.figure1 style="max-width: 50%;"} 
+![](/assets/img/projects/imagecompress/loss_decoding.png){:.figure1 style="max-width: 100%;"}
 
 ## Solutions tried until now...    
 
 - Standardize and normalize the data
 - Increase the capacity of the convolution network
 - Have a fully connected layer in the middle
+- Fine-tuning the modelsll
 - Alternate between training the 
 - Train the medium resolution to be able to decode high resolution from the start
 

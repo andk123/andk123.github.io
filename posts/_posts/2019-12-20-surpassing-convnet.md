@@ -1,13 +1,13 @@
 ---
 title: Article:&nbsp;Image Classification - An attempt at surpassing the Convolutional Neural Network
 image: /assets/img/posts/VGGnetwork.png
-description: >
-  Description of the paper review
+# description: >
+#   Description of the paper review
 ---
 
-It is no news to anyone, Convolutional Neural Networks are among the most popular techniques these days in image classification.
+It is no news to anyone, Convolutional Neural Networks (CNN) are among the most popular techniques these days in image classification.
 
-However, for a system with limited ressources,
+However, for a system with limited ressources, can simpler techniques prove to be as efficient as CNNs in image classification tasks?
 
 <html>
 <head>
