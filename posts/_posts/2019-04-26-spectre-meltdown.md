@@ -5,7 +5,7 @@ description: >
   Discussion sur les vulnérabilités critiques Spectre et Meltdown
 ---
 
-Deux grandes failles des processurs modernes sont discutées dans l'article ci-dessous.
+Deux grandes failles des processeurs modernes---Spectre et Meltdown---dont la plupart de nos appareils peuvent être touchés, sont discutées dans l'article ci-dessous.
 
 <html>
 <head>
@@ -21,4 +21,4 @@ Deux grandes failles des processurs modernes sont discutées dans l'article ci-d
 </body>
 </html>
 
-[PDF of the Review](/assets/js/pdfjs/web/viewer.html?file=/assets/js/pdfjs/build/security/Vulnerabilite_Spectre_et_Meltdown.pdf). 
+[Lien vers l'article](/assets/js/pdfjs/web/viewer.html?file=/assets/js/pdfjs/build/security/Vulnerabilite_Spectre_et_Meltdown.pdf). 

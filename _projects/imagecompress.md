@@ -57,7 +57,7 @@ In the case of the fully connected autoencoder, both the encoder and decoder are
 
 ![](/assets/img/projects/imagecompress/fullyconnect_ae.png){:.figure1 style="max-width: 50%;"} 
 
-However, this model would not suited for our task as the number of parameters in the fully connected layers would be way too large since we are dealing with images. For example, the number of parameters in the first layer assuming only 100 neurons and a 172x172 colored image would be 172 x 172 x 3 x 100 + 100 = 8,875,300 parameters only for the first layer.
+However, this model would not suited for our task as the number of parameters in the fully connected layers would be way too large since we are dealing with images. For example, the number of parameters in the first layer assuming only 100 neurons and a 172x172 colored image (rgb) would be 172 x 172 x 3 x 100 + 100 = 8,875,300 parameters only for the first layer.
 <br/>
 
 **Convolutional autoencoders**  

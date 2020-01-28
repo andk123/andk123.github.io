@@ -5,9 +5,9 @@ image: /assets/img/posts/VGGnetwork.png
 #   Description of the paper review
 ---
 
-It is no news to anyone, Convolutional Neural Networks (CNN) are among the most popular techniques these days in image classification.
+It is no news to anyone, Convolutional Neural Networks (CNN) are among the most popular supervised learning techniques these days in image classification.
 
-However, for a system with limited ressources, can simpler techniques prove to be as efficient as CNNs in image classification tasks?
+However, for a system with limited ressources, can simpler techniques prove to be as efficient as CNNs in image classification tasks? This is what we study, with my partners Ilyas Amaniss and Joshua Amelia, in the following article:
 
 <html>
 <head>
@@ -23,4 +23,4 @@ However, for a system with limited ressources, can simpler techniques prove to b
 </body>
 </html>
 
-[PDF of the Review](/assets/js/pdfjs/web/viewer.html?file=/assets/js/pdfjs/build/surpassing_convnet/Surpassing_CNNs.pdf). 
+[Link to the article](/assets/js/pdfjs/web/viewer.html?file=/assets/js/pdfjs/build/surpassing_convnet/Surpassing_CNNs.pdf). 
