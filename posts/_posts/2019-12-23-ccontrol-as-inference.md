@@ -16,7 +16,7 @@ From there, my colleagues Afuad-Abrar Hossain, Tony Brière and I decided to dig
 
 ## Article
 
-For the complete review, implementation, experiment and analysis of our findings see the full article below.
+For the complete review, complete implementation, experiments and analysis of our findings see the full article below.
 
 <html>
 <head>
