@@ -65,21 +65,20 @@ However, this model would not suited for our task as the number of parameters in
  
 ![](/assets/img/projects/imagecompress/conv_ae.png){:.figure1 style="max-width: 75%;"}  
 
-Model currently in use.
+This is the model currently in use for this first attempt at solving the representation learning task.
 <br/>
 
 **Variational autoencoders**  
 
-A variational autoencoder can be defined as being an autoencoder whose training is regularised to avoid overfitting and ensure that the latent space has good properties that enable generative process. Just as a standard autoencoder, a variational autoencoder is an architecture composed of both an encoder and a decoder and that is trained to minimise the reconstruction error between the reconstructed data and the initial data. However, rather than building an encoder which outputs a single value to describe each latent state attribute, we formulate our encoder to describe a probability distribution for each latent attribute. This introduces some regularisation in the latent space. In this case, the encoder model can be referred to as the recognition model whereas the decoder model is can be referred to as the generative model.
+A variational autoencoder can be defined as being an autoencoder whose training is regularised to avoid overfitting and ensure that the latent space has good properties that enable generative process. Just as a standard autoencoder, a variational autoencoder is an architecture composed of both an encoder and a decoder and that is trained to minimise the reconstruction error between the reconstructed data and the initial data. However, rather than building an encoder which outputs a single value to describe each latent state attribute, we formulate our encoder to describe a probability distribution for each latent attribute. This introduces some regularisation in the latent space. In this case, the encoder model can be referred to as the recognition model whereas the decoder model can be referred to as the generative model.
 
 ![](/assets/img/projects/imagecompress/vae.jpg){:.figure1 style="max-width: 65%;"} 
 
-Possible alternative solution,
- but generally used as a generative model
+Unlike convolutional autoencoders, this model is generally used as a generative model. However, it could be an interesting alternative solution.
 
 ## Data from DIV2K Dataset
  
-In order to train this model and provide a proof of concept, I decided to opt for the DIVerse 2K resolution high quality images (DIV2K) dataset. The DIV2K dataset includes:
+In order to train this model and provide a proof of concept, I decided to opt for the DIVerse 2K resolution high quality images (DIV2K) dataset. The DIV2K dataset consist of RGB images with a large diversity of contents. It includes:
 - Numerous images duplicated in different resolutions
 - For each resolution: 800 images for the training set
 - 100 images for the validation set
@@ -88,11 +87,11 @@ In order to train this model and provide a proof of concept, I decided to opt fo
 ![](/assets/img/projects/imagecompress/DIV2K_dataset2.png){:.figure1 style="max-width: 50%; display: inline-block"} 
 ![](/assets/img/projects/imagecompress/DIV2K_dataset3.png){:.figure1 style="max-width: 50%; display: inline-block"}  
 
-Dataset available at: [https://data.vision.ee.ethz.ch/cvl/DIV2K/](https://data.vision.ee.ethz.ch/cvl/DIV2K/)
+The dataset available at: [https://data.vision.ee.ethz.ch/cvl/DIV2K/](https://data.vision.ee.ethz.ch/cvl/DIV2K/)
 
 ## Training the data Medium resolution (172x172x3)
 
-First I trained the model using 172x172x3 images to represent the medium resolution images. Due to the limited computation power available, I had to limit the number of pixels that would be treated in the model. The images displayed in the graph below are validation samples at the end of the training epoch. For each pair of images, the top image is the original data and the bottom image is the reconstructed data through the model. 
+First I trained the first autoencoder using 172x172x3 images to represent the medium resolution images. Due to the limited computation power available, I had to limit the number of pixels that would be treated in the model. The images displayed in the graph below are validation samples at the end of the training epoch followed by the graph of the loss functions. For each pair of images, the top image is the original data and the bottom image is the reconstructed data through the model. 
 
 ![](/assets/img/projects/imagecompress/medium_resolution_juxta_done.png){:.figure1 style="max-width: 100%;"} 
 
@@ -100,7 +99,7 @@ First I trained the model using 172x172x3 images to represent the medium resolut
 
 ## Training the data High resolution (344x344x3)
 
-Same idea as in the previous section using high resolution images. For this case, I trained the model using 344x344x3 images to represent the high resolution images. Again, the images displayed in the graph below are validation samples at the end of the training epoch. For each pair of images, the top image is the original data and the bottom image is the reconstructed data through the model. 
+Same idea as in the previous section using high resolution images. For this case, I trained the second autoencoder using 344x344x3 images to represent the high resolution images. Again, the images displayed in the graph below are validation samples at the end of the training epoch followed by the graph of the loss functions. For each pair of images, the top image is the original data and the bottom image is the reconstructed data through the model. 
 
 ![](/assets/img/projects/imagecompress/high_resolution_juxta_done.png){:.figure1 style="max-width: 100%;"} 
 
@@ -108,12 +107,16 @@ Same idea as in the previous section using high resolution images. For this case
 
 ## Main idea is to Capture the features
 
-The main idea when using the autoencoder in this problem is to capture the features of the images while disregarding the noise. Now, the next idea is to find a relation between the features collected from a high resolution image and the features of the same image in a lower resolution. 
-- Decode an image using High resolution model
-- Use the latent representation from this high resolution image
-- Decode this representation using the Medium resolution model
+Until now, both models are working fine. The first autoencoder successfully compressed the images to then reconstruct them with only a small loss. The second autoencoder performed similarly with high resolution images. The main idea here when using autoencoders is to capture the main features of the images while disregarding the noise. 
 
 ![](/assets/img/projects/imagecompress/encode_type.png){:.figure1 style="max-width: 50%;"} 
+
+Now, the next idea is to find a relation between the features collected from a high resolution image and the features of the same image in medium resolution. 
+- Encode an image using High resolution model
+- Use the latent representation of this high resolution image and transform it into a representation of a medium resoultion image 
+- Decode this representation using the medium resolution model
+
+To do so, I created a third model that would be placed between the two previous autoencoders. This new network would take the compressed representation of the high resolution image, adjust it, and feed it to the decoder of the medium resolution autoencoder. The idea here, is that even though both autoencoders do not use the same weights, the latent representation of the same image in different resolutions should be similar. Therefore, using an additional neural network such as a simple multilayer perceptron we could transform the representation of the high resolution image to a representation of a medium quality image. Inevitably, some features of the high resolution image will be lost, but we should still be able to retrieve all the features of a medium quality image. 
 
 ## However when put in practice...
 
