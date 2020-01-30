@@ -61,11 +61,11 @@ However, this model would not suited for our task as the number of parameters in
 <br/>
 
 **Convolutional autoencoders**  
- Unlike the fully connected autoencoder, the convolutional autoencoder keep the spatial information of the input image data as they are, and extract information gently in what is called the Convolution layer. This way, the number of parameters needed using the convolutional autoencoder is greatly reduced. Furthermore, it also retains the spatial relationships in the data.
+ Unlike the fully connected autoencoder, the convolutional autoencoder keep the spatial information of the input image data as they are, and extract information efficiently in what is called the convolution layer. This way, the number of parameters needed using the convolutional autoencoder is greatly reduced. Furthermore, it also retains the spatial relationships in the data.
  
 ![](/assets/img/projects/imagecompress/conv_ae.png){:.figure1 style="max-width: 75%;"}  
 
-Model currently in use  
+Model currently in use.
 <br/>
 
 **Variational autoencoders**  
