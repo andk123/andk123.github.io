@@ -116,11 +116,11 @@ Now, the next idea is to find a relation between the features collected from a h
 - Use the latent representation of this high resolution image and transform it into a representation of a medium resoultion image 
 - Decode this representation using the medium resolution model
 
-To do so, I created a third model that would be placed between the two previous autoencoders. This new network would take the compressed representation of the high resolution image, adjust it, and feed it to the decoder of the medium resolution autoencoder. The idea here, is that even though both autoencoders do not use the same weights, the latent representation of the same image in different resolutions should be similar. Therefore, using an additional neural network such as a simple multilayer perceptron we could transform the representation of the high resolution image to a representation of a medium quality image. Inevitably, some features of the high resolution image will be lost, but we should still be able to retrieve all the features of a medium quality image. 
+To do so, I created a third model that would be placed between the two previous autoencoders. This new network would take the compressed representation of the high resolution image, adjust it, and feed it to the decoder of the medium resolution autoencoder. The idea here is that even though both autoencoders do not use the same weights, the latent representation of the same image in different resolutions should be similar. Therefore, using an additional neural network such as a simple multilayer perceptron we could transform the representation of the high resolution image to a representation of a medium quality image. Inevitably, some features of the high resolution image will be lost, but we should still be able to retrieve all the features of a medium quality image. 
 
 ## However when put in practice...
 
-The results are not terrible. The figure below represents compressed representation of high resolution images being processed through a feedforward neural network and then to the decoder of the medium resolution images throughout the epochs. The model struggles at converging. 
+The results are not terrible. The figure below is the result of the compressed representation of high resolution images being processed through the multilayer perceptron and finally decoded using the medium resolution autoencoder to obtain reconstructed medium resolution images. However, the model struggles at converging even after multiple epochs of training. This is where I am at now.
 
 ![](/assets/img/projects/imagecompress/rebuild_image_juxta_done.png){:.figure1 style="max-width: 50%;"} 
 
