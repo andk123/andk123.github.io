@@ -6,7 +6,6 @@ basics:
   label: "Software Engineer & Master's Student"
   picture: "/assets/img/author/46864421944_8ef75a7019_o.jpg"
   email: "awkokoroko@gmail.com"
-  phone: "(514) 746-6347"
   #website: "https://piedpiper.com"
   summary: >
     Machine learning master's student and Canadian track athlete.
@@ -74,19 +73,6 @@ work:
       - "Created an interactive Web Application for automatic dimensioning and performance analysis of new cache servers in the network."
       - "Implemented tools to estimate the number of nodes needed in the system, their corresponding bandwidth and their throughput
 based on protocols, encodings, hardware and traffic profiles."
-  - company: "McGill University"
-    position: "Teaching Assistant"
-    website: "https://www.mcgill.ca/study/2018-2019/courses/comp-310"
-    startDate: "Aug 2017"
-    endDate: "Jan 2018"
-    summary: >
-      Teaching Assistant for COMP 310 - Operating Systems (Control and scheduling, Resource allocation, processors, access methods, 
-      main storage management, multiprocessing and synchronization)
-    highlights:
-      - Tasked with conducting office hours every week, handling online course discussion board, and answering emails to help students with queries
-      - Graded assignments and exams under the supervision of the course instructor
-      - Prepared solution sets for assignments
-      - Weekly meetings with other teaching assistants and instructors.
   - company: "Ericsson Canada"
     position: "Test and Validation Engineer Intern"
     website: "https://www.ericsson.ca/"
