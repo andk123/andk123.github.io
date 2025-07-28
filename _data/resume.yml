@@ -21,9 +21,9 @@ basics:
     - network: "GitHub"
       username: "andk123"
       url: "https://github.com/andk123"
-    - network: "LinkedIn"
-      username: "Arnold Kokoroko"
-      url: "https://www.linkedin.com/in/arnold-kokoroko-2b4656114/"
+    # - network: "LinkedIn"
+    #   username: "Arnold Kokoroko"
+    #   url: "https://www.linkedin.com/in/arnold-kokoroko-2b4656114/"
 education:
   - institution: "Université de Montréal"
     area: "Computer Science"
